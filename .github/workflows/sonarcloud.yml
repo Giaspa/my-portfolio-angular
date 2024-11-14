@@ -32,11 +32,11 @@ jobs:
 
       - name: SonarCloud Scan
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR___MY_PORTFOLIO_ANGULAR___TOKEN }}
         run: |
           sonar-scanner \
           -Dsonar.projectKey=Giaspa_my-portfolio-angular \
           -Dsonar.organization=giaspa \
           -Dsonar.host.url=https://sonarcloud.io \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+          -Dsonar.login=${{ secrets.SONAR___MY_PORTFOLIO_ANGULAR___TOKEN }} \
           -Dsonar.branch.name=${{ github.ref_name }}
