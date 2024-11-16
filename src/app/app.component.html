@@ -1,26 +1,27 @@
 <div class="bg-radial-gradient h-screen flex flex-col relative overflow-hidden">
-  <!-- <img class="absolute opacity-10 -right-10 bottom-8 -rotate-12" src="assets/img/Angular Logo.png" alt="Angular logo"> -->
 
   <app-navbar class="h-28"></app-navbar>
-  <app-hero class="flex-grow h-[100vh]"></app-hero>
+  <div class="flex-grow h-[100vh]">
+    <router-outlet/>
+  </div>
 
   <section class="flex-grow flex flex-row justify-evenly items-end pb-8 px-32 gap-16">
-    <app-card id="about" imagePath="assets/img/About.png" class="flex-1" [isActive]="true">
+    <app-card id="about" imagePath="assets/img/About.png" class="flex-1" routerLink="about">
       About
       <p>Who I am and how I got here.</p>
     </app-card>
 
-    <app-card id="projects" imagePath="assets/img/Projects.png" class="flex-1">
+    <app-card id="projects" imagePath="assets/img/Projects.png" class="flex-1" routerLink="projects">
       Projects
       <p>What I created and how I made it.</p>
     </app-card>
 
-    <app-card id="skills" imagePath="assets/img/Skills.png" class="flex-1">
+    <app-card id="skills" imagePath="assets/img/Skills.png" class="flex-1" routerLink="skills">
       Skills
       <p>My tools and knowledge.</p>
     </app-card>
 
-    <app-card id="contact" imagePath="assets/img/Contacts.png" class="flex-1">
+    <app-card id="contacts" imagePath="assets/img/Contacts.png" class="flex-1" routerLink="contacts">
       Contacts
       <p>Where to find me.</p>
     </app-card>
