@@ -11,5 +11,5 @@ import { Component, Input } from '@angular/core';
 export class CardComponent {
   @Input() id: string ="";
   @Input() imagePath: string ="";
-
+  @Input() isActive: boolean = false;
 }
