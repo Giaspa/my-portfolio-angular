@@ -2,41 +2,24 @@
   <h1 class="text-6xl uppercase font-extrabold font-[fantasy]">Gianluca <span
       class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-900">Spadazzi</span></h1>
 
-  <section class="flex flex-row gap-8">
-    <article class="flex-1 flex flex-col gap-4">
-      <p class="text-md flex flex-col">
-        <span>Sono uno sviluppatore Fullstack con una forte passione per il Frontend e un amore profondo per
-          JavaScript.</span>
-        <span> Il mio viaggio nel mondo della tecnologia è iniziato con una semplice curiosità su come funzionano i siti
-          web, ma si è rapidamente trasformato in una carriera alimentata da passione e innovazione.</span>
-        <span> Negli anni, ho affinato le mie competenze nella creazione di applicazioni scalabili e intuitive, capaci
-          di
-          risolvere problemi reali e migliorare la vita quotidiana.</span>
-      </p>
-      <p class="text-md flex flex-col">
-        <span>Ciò che mi entusiasma di più nello sviluppo è il potenziale infinito di crescita.</span>
-        <span> Mi piace tenermi aggiornato sulle
-          ultime tecnologie, perfezionare costantemente le mie capacità e esplorare nuovi approcci al design
-          software.</span>
-        <span> Per me,
-          ogni progetto è un'opportunità per imparare qualcosa di nuovo e offrire valore.</span>
-      </p>
+  <div class="flex flex-row gap-8">
+    <section class="flex-1">
+      <img src="assets/img/Me_red.png" alt="This is me!"
+        class="h-60 mr-4 aspect-square opacity-40 float-left rounded-xl">
 
-      <p class="text-md flex flex-col">
-        <span> Quando non scrivo codice, mi troverai spesso a leggere sulle ultime tendenze IT, a prototipare nuove idee
-          o
-          a
-          trovare soluzioni creative per sfide complesse.</span>
-        <span> Credo fermamente nel potere della collaborazione e cerco sempre modi
-          per condividere conoscenze e crescere insieme ai miei colleghi.</span>
+      @for(item of about | keyvalue; track item.key; let i = $index ){
+      <p class="text-md flex flex-col text-pretty py-2">
+        @for(assert of item.value; track $index){
+        <span>{{assert}}</span>
+        }
       </p>
-    </article>
+      }
+    </section>
 
-    <article class="flex-1 flex flex-col gap-4">
-      <p class="text-md flex flex-col">
-        <span class="uppercase font-bold text-lg">Senior Frontend Developer</span>
-        <span class="uppercase font-semibold">Interlogica | società Benefit</span>
-      </p>
-    </article>
-  </section>
+    <section class="flex-1 flex flex-col gap-2 overflow-y-scroll max-h-96 pr-4">
+      @for(exp of experiences; track exp.id){
+      <app-experience [experience]="exp" />
+      }
+    </section>
+  </div>
 </app-hero>

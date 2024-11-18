@@ -10,7 +10,8 @@ module.exports = {
       },
       backgroundImage: {
         'radial-gradient': 'radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 0%, rgba(0,0,0,1) 100%)'
-      }
+      },
+
     },
   },
   plugins: [
