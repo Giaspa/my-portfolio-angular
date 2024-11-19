@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './project-button.component.html',
-  styleUrl: './project-button.component.css'
 })
 export class ProjectButtonComponent {
   @Input() project!: Project;
@@ -27,6 +26,6 @@ export class ProjectButtonComponent {
         }
         this.router.navigate([`projects`], { fragment: this.project.id })
       });
-    }, 0);
+    }, 200);
   }
 }

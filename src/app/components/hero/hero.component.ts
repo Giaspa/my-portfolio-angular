@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
 })
 export class HeroComponent {
   @Input() imagePath: string ="assets/img/About.png";

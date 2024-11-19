@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './projects-carousel.component.html',
-  styleUrl: './projects-carousel.component.css'
 })
 export class ProjectsCarouselComponent {
   @Input() projects!: Project[];

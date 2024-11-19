@@ -6,7 +6,6 @@ import { HeroComponent } from "../../components/hero/hero.component";
   standalone: true,
   imports: [HeroComponent],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.css'
 })
 export class SkillsComponent {
 

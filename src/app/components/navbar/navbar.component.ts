@@ -6,7 +6,6 @@ import { FrameworkIconComponent } from "./framework-icon/framework-icon.componen
   standalone: true,
   imports: [FrameworkIconComponent],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
 

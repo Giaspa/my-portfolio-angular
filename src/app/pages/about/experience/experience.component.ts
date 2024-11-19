@@ -6,7 +6,6 @@ import { Experience } from '../../../../types/experience.model';
   standalone: true,
   imports: [],
   templateUrl: './experience.component.html',
-  styleUrl: './experience.component.css'
 })
 export class ExperienceComponent {
   @Input() experience?: Experience

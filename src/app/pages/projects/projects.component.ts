@@ -10,7 +10,6 @@ import { ProjectService } from './project.service';
   standalone: true,
   imports: [HeroComponent, ProjectButtonComponent, ProjectsCarouselComponent],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
   projects: Project[] = PROJECTS;

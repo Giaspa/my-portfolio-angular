@@ -51,7 +51,6 @@ const ABOUT: About = {
   standalone: true,
   imports: [HeroComponent, ExperienceComponent, CommonModule],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
 })
 export class AboutComponent {
   experiences: Experience[] = EXPERIENCES;
