@@ -15,31 +15,29 @@ export class ProjectsCarouselComponent {
   @Input() svgs!: any;
   lastProjectsIndex: number = 0;
 
-  constructor(readonly service: ProjectService, readonly router: Router){}
+  constructor(readonly service: ProjectService, readonly router: Router) { }
 
   ngOnInit() {
     this.lastProjectsIndex = this.projects.length - 1
   }
 
   getBackId($index: number): string {
-    switch ($index) {
-      case 0:
-        return this.projects[this.lastProjectsIndex].id;
-      default:
-        return this.projects[$index - 1].id;
+    if ($index === 0) {
+      return this.projects[this.lastProjectsIndex].id;
     }
+
+    return this.projects[$index - 1].id;
   }
 
   getAheadId($index: number) {
-    switch ($index) {
-      case this.lastProjectsIndex:
-        return this.projects[0].id;
-      default:
-        return this.projects[$index + 1].id;
+    if ($index === this.lastProjectsIndex) {
+      return this.projects[0].id;
     }
+
+    return this.projects[$index + 1].id;
   }
 
-  closeCarousel(){
+  closeCarousel() {
     this.service.setShowCarousel(false);
     this.router.navigate(["projects"]);
   }
