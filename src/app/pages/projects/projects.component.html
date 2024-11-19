@@ -2,46 +2,15 @@
   <h1 class="text-6xl uppercase font-extrabold font-[fantasy]">My <span
       class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-900">Projects</span></h1>
 
-  <section class="flex flex-row flex-wrap gap-8 justify-center">
-    <app-project-button title="My Portfolio Angular">
-      <img src="assets/svg/angular.svg" alt="Angular" class="h-5">
-      <img src="assets/svg/tailwind.svg" alt="Tailwind" class="h-5">
-      <img src="assets/svg/ts.svg" alt="TypeScript" class="h-5">
-    </app-project-button>
 
-    <app-project-button title="My Angular Docs">
-      <img src="assets/svg/angular.svg" alt="Angular" class="h-5">
-      <img src="assets/svg/tailwind.svg" alt="Tailwind" class="h-5">
-      <img src="assets/svg/sonarcloud.svg" alt="SonarCloud" class="h-5">
-      <img src="assets/svg/ts.svg" alt="TypeScript" class="h-5">
-    </app-project-button>
-
-    <app-project-button title="Game of life">
-      <img src="assets/svg/angular.svg" alt="Angular" class="h-5">
-      <img src="assets/svg/ts.svg" alt="TypeScript" class="h-5">
-      <img src="assets/svg/sass.svg" alt="Sass" class="h-5">
-    </app-project-button>
-
-    <app-project-button title="My Next Docs">
-      <img src="assets/svg/react.svg" alt="React" class="h-5">
-      <img src="assets/svg/nextjs.svg" alt="Next.js" class="h-5">
-      <img src="assets/svg/tailwind.svg" alt="Tailwind" class="h-5">
-      <img src="assets/svg/ts.svg" alt="TypeScript" class="h-5">
-    </app-project-button>
-
-    <app-project-button title="Biobanca Nazionale - IZS">
-      <img src="assets/svg/angular.svg" alt="Angular" class="h-5">
-      <img src="assets/svg/java.svg" alt="Java" class="h-5">
-      <img src="assets/svg/sql.svg" alt="MySql" class="h-5">
-      <img src="assets/svg/ts.svg" alt="TypeScript" class="h-5">
-    </app-project-button>
-
-    <app-project-button title="RVE - Regione Veneto">
-      <img src="assets/svg/angular.svg" alt="Angular" class="h-5">
-      <img src="assets/svg/java.svg" alt="Java" class="h-5">
-      <img src="assets/svg/sql.svg" alt="MySql" class="h-5">
-      <img src="assets/svg/ts.svg" alt="TypeScript" class="h-5">
-    </app-project-button>
-  </section>
+  @if(service.getShowCarousel()){
+    <app-projects-carousel [projects]="projects" [svgs]="svgs" />
+  } @else {
+    <section class="flex flex-row flex-wrap gap-8 justify-center">
+      @for(project of projects; track project.id){
+      <app-project-button [project]="project" [svgs]="svgs" />
+      }
+    </section>
+  }
 
 </app-hero>

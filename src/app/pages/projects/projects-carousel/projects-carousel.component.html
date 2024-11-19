@@ -1,0 +1,112 @@
+<div class="carousel w-full">
+  @for (project of projects; track project.id) {
+  <ng-container
+    *ngTemplateOutlet="carouselItem; context: {project, back:getBackId($index), ahead:getAheadId($index)}"></ng-container>
+  }
+</div>
+
+<ng-template #carouselItem let-project="project" let-back="back" let-ahead="ahead">
+  <div [id]="project.id" class="carousel-item relative w-full">
+    <img src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
+      class="w-full relative opacity-0" />
+
+    <article class="w-full absolute top-0 py-12 px-24 h-full glass flex flex-col gap-4">
+      <p class="flex flex-col">
+        <span class="text-2xl font-mono uppercase font-semibold">{{project.name}}</span>
+        <span class="flex flex-row text-sm font-mono text-neutral-content gap-4">
+          <span>
+            {{project.dateFrom}}{{project.dateTo? " | "+project.dateTo: null}}
+          </span>
+          ·
+          <span>{{project.role}}</span>
+          ·
+          <span>Team size: {{project.teamSize}}</span>
+        </span>
+      </p>
+
+      <div class="flex flex-row flex-1">
+        <p class="flex-1">{{project.description}}</p>
+
+        <section class="divider lg:divider-horizontal before:bg-neutral-content after:bg-neutral-content opacity-50"></section>
+
+        <section class="w-1/5 flex flex-col justify-between font-mono">
+          <div>
+            <p>Tech stack:</p>
+            <figure class="mt-1 flex flex-row gap-4 flex-wrap">
+              @for(tech of project.stack; track tech){
+              <img [src]="svgs[tech.toLowerCase()]" [alt]="tech" [title]="tech" class="h-8">
+              }
+            </figure>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            @if(project.link){
+            <p class="flex flex-row items-baseline group">
+              <a [href]="project.link" target="_blank" rel="noopener" class="group-hover:animate-pulse w-24">
+                <i class="fa-solid fa-link mr-2 w-5"></i>
+
+                <span class="underline underline-offset-2">Link</span>
+              </a>
+
+              <i class="fa-solid fa-check text-green-600 ml-4"></i>
+            </p>
+            } @else {
+            <p class="flex flex-row items-baseline group">
+              <span class="w-24 opacity-50">
+                <i class="fa-solid fa-link mr-2 w-5"></i>
+
+                <span>Link</span>
+              </span>
+
+              <i class="fa-solid fa-xmark text-red-600 ml-4"></i>
+            </p>
+            }
+
+            @if(project.github){
+            <p class="flex flex-row items-baseline group">
+              <a [href]="project.github" target="_blank" rel="noopener" class="group-hover:animate-pulse w-24">
+                <i class="fa-brands fa-github mr-2 w-5"></i>
+
+                <span class="underline underline-offset-2">Github</span>
+              </a>
+
+              <i class="fa-solid fa-check text-green-600 ml-4"></i>
+            </p>
+            } @else {
+            <p class="flex flex-row items-baseline group">
+              <span class="w-24 opacity-50">
+                <i class="fa-brands fa-github mr-2 w-5"></i>
+
+                <span>Github</span>
+              </span>
+
+              <i class="fa-solid fa-xmark text-red-600 ml-4"></i>
+            </p>
+            }
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <div class="absolute left-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+      <a [href]="'projects#'+back"
+        class="btn btn-circle bg-neutral-content hover:bg-neutral-content hover:scale-95 text-black">
+        <i class="fa-solid fa-caret-left fa-2xl"></i>
+      </a>
+    </div>
+
+    <div class="absolute right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+      <a [href]="'projects#'+ahead"
+        class="btn btn-circle bg-neutral-content hover:bg-neutral-content hover:scale-95 text-black">
+        <i class="fa-solid fa-caret-right fa-2xl"></i>
+      </a>
+    </div>
+
+    <div class="absolute right-0 top-0 flex -translate-y-0 transform justify-between">
+      <button (click)="closeCarousel()"
+        class="btn btn-circle border-transparent bg-transparent hover:border-transparent hover:bg-transparent hover:scale-95 text-neutral-content">
+        <i class="fa-solid fa-xmark fa-2xl"></i>
+      </button>
+    </div>
+  </div>
+</ng-template>
