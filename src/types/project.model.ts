@@ -14,7 +14,7 @@ export type Project = {
   isAvaible: boolean,
 }
 
-export const PROJECTS: Project[] = [
+export const MOCK_PROJECTS: Project[] = [
   {
     id: "My Portfolio Angular",
     name: "My Portfolio Angular",
@@ -269,6 +269,7 @@ export const PROJECTS: Project[] = [
       "Java",
       "Spring",
       "MySql",
+      "MyBatis",
     ],
     link: null,
     github: null,
