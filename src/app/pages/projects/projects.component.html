@@ -1,5 +1,5 @@
 <app-hero imagePath="assets/img/Projects.png">
-  <h1 class="text-6xl uppercase font-extrabold font-[fantasy] flex flex-col lg:flex-row text-end lg:text-start">
+  <h1 class="text-6xl uppercase font-extrabold font-[fantasy] flex flex-col lg:flex-row text-end lg:text-start h-32 lg:h-16">
     <span>My </span>
     <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-900">Projects</span>
   </h1>
@@ -7,9 +7,9 @@
   @if(service.getShowCarousel()){
   <app-projects-carousel [projects]="projects" [svgs]="svgs" class="h-full lg:h-fit"/>
   } @else {
-  <section class="flex flex-col lg:flex-row lg:flex-wrap gap-8 lg:justify-center">
+  <section class="flex-grow flex flex-col content-start lg:flex-row lg:flex-wrap gap-8 lg:justify-center lg:max-h-[calc(100vh-16rem-3rem)] lg:overflow-y-auto">
     @for(project of projects; track project.id){
-    <app-project-button [project]="project" [svgs]="svgs"/>
+    <app-project-button [project]="project" [svgs]="svgs" class="h-fit"/>
     }
   </section>
   }

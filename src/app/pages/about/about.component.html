@@ -1,24 +1,20 @@
 <app-hero imagePath="assets/img/About.png">
-  <h1 class="text-6xl uppercase font-extrabold font-[fantasy] flex flex-col lg:flex-row text-end lg:text-start">
+  <h1 class="text-6xl uppercase font-extrabold font-[fantasy] flex flex-col lg:flex-row text-end lg:text-start h-32 lg:h-16">
     <span>Gianluca </span>
     <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-900">Spadazzi</span>
   </h1>
 
   <div class="flex flex-col lg:flex-row gap-8">
-    <section class="flex-1">
+    <section class="flex-1 lg:overflow-y-auto lg:max-h-[calc(100vh-16rem-3rem)] relative">
       <img src="assets/img/Me_red.png" alt="This is me!"
         class="h-60 mr-4 opacity-60 place-self-center lg:place-content-start float-none lg:float-left rounded-xl">
 
-      @for(item of about | keyvalue; track item.key; let i = $index ){
-      <p class="text-md flex flex-col text-pretty py-2">
-        @for(assert of item.value; track $index){
-        <span>{{assert}}</span>
-        }
-      </p>
-      }
+      <div class="">
+        <app-assert-item key="a_who"></app-assert-item>
+      </div>
     </section>
 
-    <section class="flex-1 flex flex-col gap-2 lg:overflow-y-scroll max-h-96 lg:pr-4">
+    <section class="flex-1 flex flex-col gap-2 lg:overflow-y-auto lg:max-h-[calc(100vh-16rem-3rem)] lg:pr-4">
       @for(exp of experiences; track exp.id){
       <app-experience [experience]="exp" />
       }

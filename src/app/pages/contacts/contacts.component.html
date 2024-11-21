@@ -1,11 +1,11 @@
 <app-hero imagePath="assets/img/Contacts.png">
-  <h1 class="text-6xl uppercase font-extrabold font-[fantasy] flex flex-col lg:flex-row text-end lg:text-start">
+  <h1 class="text-6xl uppercase font-extrabold font-[fantasy] flex flex-col lg:flex-row text-end lg:text-start h-32 lg:h-16">
     <span>My </span>
     <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-900">contacts</span>
   </h1>
 
-  <ul class="flex flex-col lg:grid lg:grid-cols-4 lg:grid-rows-2 gap-4 lg:gap-8">
-    <li class="glass p-4 lg:p-8 flex flex-col gap-2 lg:gap-4 items-center order-3 lg:order-1">
+  <ul class="flex flex-col lg:grid lg:grid-cols-4 lg:grid-rows-2 gap-4 lg:gap-8 h-full">
+    <li class="glass p-4 lg:p-8 flex flex-col gap-2 lg:gap-4 justify-center items-center order-3 lg:order-2">
       <p class="font-mono text-2xl font-semibold">
         <i class="fa-solid fa-phone fa-sm"></i>
         Phone
@@ -16,7 +16,7 @@
       </p>
     </li>
 
-    <li class="glass p-4 lg:p-8 flex flex-col gap-2 lg:gap-4 items-center order-4 lg:order-2">
+    <li class="glass p-4 lg:p-8 flex flex-col gap-2 lg:gap-4 justify-center items-center order-4 lg:order-3">
       <p class="font-mono text-2xl font-semibold">
         <i class="fa-solid fa-envelope fa-sm"></i>
         E-mail
@@ -28,7 +28,7 @@
     </li>
 
     <li class="glass p-4 lg:p-8 order-1 lg:order-4">
-      <a class="flex flex-col items-center gap-2 lg:gap-4 hover:animate-pulse hover:text-white"
+      <a class="h-full flex flex-col justify-center items-center gap-2 lg:gap-4 hover:animate-pulse hover:text-white"
         href="https://www.linkedin.com/in/gianluca-spadazzi/" target="_blank" rel="noopener">
         <p class="font-mono text-2xl font-semibold ">LinkedIn</p>
 
@@ -37,7 +37,7 @@
     </li>
 
     <li class="glass p-4 lg:p-8 order-2 lg:order-5">
-      <a class="flex flex-col items-center gap-2 lg:gap-4 hover:animate-pulse hover:text-white"
+      <a class="h-full flex flex-col justify-center items-center gap-2 lg:gap-4 hover:animate-pulse hover:text-white"
         href="https://github.com/Giaspa" target="_blank" rel="noopener">
         <p class="font-mono text-2xl font-semibold ">GitHub</p>
 
@@ -45,7 +45,7 @@
       </a>
     </li>
 
-    <li class="glass col-span-2 row-span-2 p-4 lg:p-8 flex flex-col gap-4 order-5 lg:order-3">
+    <li class="glass col-span-2 row-span-2 p-4 lg:p-8 flex flex-col gap-4 order-5 lg:order-1">
       <p class="font-mono text-2xl font-semibold">Contact me</p>
 
       <form #templateForm="ngForm" class="flex-1 flex flex-col gap-4 lg:gap-2" (ngSubmit)="onSubmit(templateForm)">
@@ -68,7 +68,7 @@
 
         <label class="flex-1 form-control flex flex-row items-center gap-2 glass rounded-md relative ">
           <textarea
-            class="textarea textarea-bordered bg-transparent resize-none flex-1 h-40 lg:h-fit read-only:cursor-not-allowed"
+            class="textarea textarea-bordered bg-transparent resize-none flex-1 h-full read-only:cursor-not-allowed"
             placeholder="Let's connect! How can I help you? *" required name="body" ngModel
             [readOnly]="isSent"></textarea>
 

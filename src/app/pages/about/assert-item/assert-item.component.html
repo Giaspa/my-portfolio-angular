@@ -1,0 +1,13 @@
+<div>
+  @if(key && service.getTabStatus(key)){
+  <p class="font-mono text-lg flex flex-col text-pretty py-2">
+    @for(assert of findList(); track $index){
+    <span>{{assert}}</span>
+    }
+  </p>
+
+  <app-assert-item [key]="nextkey"></app-assert-item>
+  } @else {
+    <button #focusbutton (click)="showNext()" class="btn glass">{{message}}</button>
+  }
+</div>
