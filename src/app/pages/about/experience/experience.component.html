@@ -1,12 +1,12 @@
 <article class="collapse collapse-arrow bg-base-200 bg-opacity-25">
   <input type="radio" name="my-experiences"/>
   <p class="text-md flex flex-col collapse-title">
-    <span class="flex flex-row flex-1 justify-between">
-      <span class="uppercase font-bold text-lg">
+    <span class="flex flex-col lg:flex-row flex-1 justify-between">
+      <span class="uppercase font-bold text-lg order-2 lg:order-1">
         {{experience?.what}}
       </span>
 
-      <span>
+      <span class="order-1 lg:order-2">
         {{experience?.whenFrom}} - {{experience?.whentTo}}
       </span>
     </span>

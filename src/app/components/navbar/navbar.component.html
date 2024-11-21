@@ -1,9 +1,9 @@
-<nav class="flex justify-end items-center p-5 bg-transparent z-10 relative">
-  <ul class="flex space-x-4 text-lg text-white align-middle">
+<nav class="flex justify-start lg:justify-end items-center p-5 bg-transparent z-20 relative">
+  <ul class="hidden lg:flex space-x-4 text-lg text-white align-middle">
     <li>Show in:</li>
 
     <app-framework-icon [disabled]="true" title="Angular">
-      <img src="assets/svg/angular.svg" alt="Angular" >
+      <img src="assets/svg/angular.svg" alt="Angular">
     </app-framework-icon>
 
     <app-framework-icon title="React">
@@ -14,4 +14,44 @@
       <img src="assets/svg/vue.svg" alt="Vue.js" class="h-5">
     </app-framework-icon>
   </ul>
+
+  <div class="dropdown lg:hidden">
+    <div tabindex="0" role="button" class="btn lg:hidden">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+      <li>
+        <a class="text-lg" routerLinkActive="underline underline-offset-2" routerLink="about">About</a>
+      </li>
+      <li>
+        <a class="text-lg" routerLinkActive="underline underline-offset-2" routerLink="projects">Projects</a>
+      </li>
+      <li>
+        <a class="text-lg" routerLinkActive="underline underline-offset-2" routerLink="skills">Skills</a>
+      </li>
+      <li>
+        <a class="text-lg" routerLinkActive="underline underline-offset-2" routerLink="contacts">Contacts</a>
+      </li>
+      <li class="h-8">
+        <a></a>
+      </li>
+      <li>
+        <a>Show in:</a>
+        <ul class="p-2 flex flex-col gap-4">
+          <app-framework-icon [disabled]="true" title="Angular">
+            <img src="assets/svg/angular.svg" alt="Angular">
+          </app-framework-icon>
+
+          <app-framework-icon title="React">
+            <img src="assets/svg/react.svg" alt="React" class="h-5">
+          </app-framework-icon>
+
+          <app-framework-icon title="Vue.js">
+            <img src="assets/svg/vue.svg" alt="Vue.js" class="h-5">
+          </app-framework-icon>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </nav>

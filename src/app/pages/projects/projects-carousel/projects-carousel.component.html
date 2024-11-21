@@ -1,4 +1,4 @@
-<div class="carousel w-full">
+<div class="carousel w-full h-full lg:h-fit">
   @for (project of projects; track project.id) {
   <ng-container
     *ngTemplateOutlet="carouselItem; context: {project, back:getBackId($index), ahead:getAheadId($index)}"></ng-container>
@@ -8,38 +8,56 @@
 <ng-template #carouselItem let-project="project" let-back="back" let-ahead="ahead">
   <div [id]="project.id" class="carousel-item relative w-full">
     <img src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp" alt="Cover"
-      class="w-full relative opacity-0" />
+      class="w-full h-full relative opacity-0" />
 
-    <article class="w-full absolute top-0 py-12 px-24 h-full glass flex flex-col gap-4">
+    <article class="w-full absolute top-0 p-4 lg:py-12 lg:px-24 h-fit lg:h-full glass flex flex-col gap-4">
+      <div class="sticky top-0 flex lg:hidden flex-row justify-between glass rounded-full">
+        <a [href]="'projects#'+back"
+          class="btn btn-circle bg-neutral-content hover:bg-neutral-content hover:scale-95 text-black">
+          <i class="fa-solid fa-caret-left fa-2xl"></i>
+        </a>
+
+        <button (click)="closeCarousel()"
+          class="btn btn-circle border-transparent bg-transparent hover:border-transparent hover:bg-transparent hover:scale-95 text-neutral-content">
+          <i class="fa-solid fa-xmark fa-2xl"></i>
+        </button>
+
+        <a [href]="'projects#'+ahead"
+          class="btn btn-circle bg-neutral-content hover:bg-neutral-content hover:scale-95 text-black">
+          <i class="fa-solid fa-caret-right fa-2xl"></i>
+        </a>
+      </div>
+
       <p class="flex flex-col">
         <span class="text-2xl font-mono uppercase font-semibold">{{project.name}}</span>
-        <span class="flex flex-row text-sm font-mono text-neutral-content gap-4">
+        <span class="flex flex-col lg:flex-row text-sm font-mono text-neutral-content lg:gap-4">
           <span>
             {{project.dateFrom}}{{project.dateTo? " | "+project.dateTo: null}}
           </span>
-          ·
+          <span class="hidden lg:block">·</span>
           <span>{{project.role}}</span>
-          ·
+          <span class="hidden lg:block">·</span>
           <span>Team size: {{project.teamSize}}</span>
         </span>
       </p>
 
-      <div class="flex flex-row flex-1">
-        <p class="flex-1">{{project.description}}</p>
+      <div class="flex flex-col lg:flex-row flex-1 gap-4 lg:gap-0">
+        <p class="flex-1 order-3 lg:order-1">{{project.description}}</p>
 
-        <section class="divider lg:divider-horizontal before:bg-neutral-content after:bg-neutral-content opacity-50"></section>
+        <section class="divider lg:divider-horizontal before:bg-neutral-content after:bg-neutral-content opacity-50 order-1 lg:order-2 m-0">
+        </section>
 
-        <section class="w-1/5 flex flex-col justify-between font-mono">
+        <section class="lg:w-1/5 flex flex-col justify-between font-mono order-2 lg:order-3 gap-8 lg:gap-0">
           <div>
             <p>Tech stack:</p>
-            <figure class="mt-1 flex flex-row gap-4 flex-wrap">
+            <figure class="mt-1 flex flex-row gap-4 flex-wrap justify-center lg:justify-start">
               @for(tech of project.stack; track tech){
               <img [src]="svgs[tech.toLowerCase()]" [alt]="tech" [title]="tech" class="h-8">
               }
             </figure>
           </div>
 
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-row lg:flex-col gap-2 justify-between lg:justify-start">
             @if(project.link){
             <p class="flex flex-row items-baseline group">
               <a [href]="project.link" target="_blank" rel="noopener" class="group-hover:animate-pulse w-24">
@@ -88,21 +106,21 @@
       </div>
     </article>
 
-    <div class="absolute left-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+    <div class="hidden lg:flex absolute left-5 top-1/2 -translate-y-1/2 transform justify-between">
       <a [href]="'projects#'+back"
         class="btn btn-circle bg-neutral-content hover:bg-neutral-content hover:scale-95 text-black">
         <i class="fa-solid fa-caret-left fa-2xl"></i>
       </a>
     </div>
 
-    <div class="absolute right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+    <div class="hidden lg:flex absolute right-5 top-1/2 -translate-y-1/2 transform justify-between">
       <a [href]="'projects#'+ahead"
         class="btn btn-circle bg-neutral-content hover:bg-neutral-content hover:scale-95 text-black">
         <i class="fa-solid fa-caret-right fa-2xl"></i>
       </a>
     </div>
 
-    <div class="absolute right-0 top-0 flex -translate-y-0 transform justify-between">
+    <div class="hidden lg:flex absolute right-0 top-0 -translate-y-0 transform justify-between">
       <button (click)="closeCarousel()"
         class="btn btn-circle border-transparent bg-transparent hover:border-transparent hover:bg-transparent hover:scale-95 text-neutral-content">
         <i class="fa-solid fa-xmark fa-2xl"></i>

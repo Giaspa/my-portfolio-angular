@@ -1,8 +1,10 @@
 <app-hero imagePath="assets/img/Skills.png" class="flex flex-col w-full">
-  <h1 class="text-6xl uppercase font-extrabold font-[fantasy]">My <span
-      class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-900">skills</span></h1>
+  <h1 class="text-6xl uppercase font-extrabold font-[fantasy] flex flex-col lg:flex-row text-end lg:text-start">
+    <span>My </span>
+    <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-900">skills</span>
+  </h1>
 
-  <section class="flex flex-row flex-wrap gap-4 flex-1">
+  <section class="flex flex-col lg:flex-row flex-wrap gap-4 flex-1">
     @for (group of skillGroup; track $index) {
     <article class="glass p-4 flex-1">
       <label class="font-mono font-semibold border-b w-full block mb-2">{{group.group || "Others..."}}</label>
