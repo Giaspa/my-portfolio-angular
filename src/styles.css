@@ -10,4 +10,11 @@
     backdrop-filter: blur(8.9px);
     -webkit-backdrop-filter: blur(8.9px);
   }
+
+  .black-ops-one-regular {
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 }

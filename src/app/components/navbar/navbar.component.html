@@ -15,25 +15,27 @@
     </app-framework-icon>
   </ul> -->
 
-  <div class="dropdown lg:hidden">
-    <div tabindex="0" role="button" class="btn lg:hidden">
-      <i class="fa-solid fa-bars"></i>
-    </div>
+  <div *ngIf="isDropdownOpen" class="lg:hidden absolute top-0 left-0 w-screen h-screen bg-transparent z-15" (click)="closeDropdown()"></div>
 
-    <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+  <div #dropdownDetails class="dropdown lg:hidden absolute top-1 left-1 z-20">
+    <button role="button" class="btn lg:hidden glass rounded-sm" (click)="toggleDropdown()">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <ul *ngIf="isDropdownOpen" class="menu dropdown-content z-20 mt-3 w-52 p-2 shadow rounded-sm glass">
       <li>
-        <a class="text-lg" routerLinkActive="underline underline-offset-2" routerLink="about">About</a>
+        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2" routerLink="about">About</a>
       </li>
       <li>
-        <a class="text-lg" routerLinkActive="underline underline-offset-2" routerLink="projects">Projects</a>
+        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2" routerLink="projects">Projects</a>
       </li>
       <li>
-        <a class="text-lg" routerLinkActive="underline underline-offset-2" routerLink="skills">Skills</a>
+        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2" routerLink="skills">Skills</a>
       </li>
       <li>
-        <a class="text-lg" routerLinkActive="underline underline-offset-2" routerLink="contacts">Contacts</a>
+        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2" routerLink="contacts">Contacts</a>
       </li>
-      <!-- <li class="h-8">
+      <li class="h-8">
         <a></a>
       </li>
       <li>
@@ -51,7 +53,7 @@
             <img src="assets/svg/vue.svg" alt="Vue.js" class="h-5">
           </app-framework-icon>
         </ul>
-      </li> -->
+      </li>
     </ul>
   </div>
 </nav>
