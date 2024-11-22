@@ -15,10 +15,10 @@
     </app-framework-icon>
   </ul> -->
 
-  <div *ngIf="isDropdownOpen" class="lg:hidden absolute top-0 left-0 w-screen h-screen bg-transparent z-15" (click)="closeDropdown()"></div>
+  <div *ngIf="isDropdownOpen" class="lg:hidden absolute top-0 left-0 w-screen h-screen bg-transparent" (pointerdown)="closeDropdown()"></div>
 
-  <div #dropdownDetails class="dropdown lg:hidden absolute top-1 left-1 z-20">
-    <button class="btn lg:hidden glass rounded-sm" (click)="toggleDropdown()">
+  <div #dropdownDetails class="dropdown lg:hidden absolute top-1 left-1 z-50">
+    <button class="btn lg:hidden glass rounded-sm" (pointerdown)="toggleDropdown()">
       <i class="fa-solid fa-bars"></i>
     </button>
 
