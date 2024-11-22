@@ -15,25 +15,31 @@
     </app-framework-icon>
   </ul> -->
 
-  <div *ngIf="isDropdownOpen" class="lg:hidden absolute top-0 left-0 w-screen h-screen bg-transparent" (pointerdown)="closeDropdown()"></div>
+  @if(isDropdownOpen){
+  <div class="lg:hidden absolute top-0 left-0 w-screen h-screen bg-transparent" (pointerdown)="closeDropdown()"></div>
+  }
 
   <div #dropdownDetails class="dropdown lg:hidden absolute top-4 left-4 z-50 pointer-events-auto">
     <button class="btn lg:hidden glass rounded-sm" (pointerdown)="toggleDropdown()">
       <i class="fa-solid fa-bars"></i>
     </button>
-
-    <ul *ngIf="isDropdownOpen" class="menu dropdown-content z-20 mt-3 w-52 p-2 shadow rounded-sm glass">
+    @if(isDropdownOpen){
+    <ul class="menu dropdown-content z-20 mt-3 w-52 p-2 shadow rounded-sm glass">
       <li>
-        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2" routerLink="about">About</a>
+        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2"
+          routerLink="about">About</a>
       </li>
       <li>
-        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2" routerLink="projects">Projects</a>
+        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2"
+          routerLink="projects">Projects</a>
       </li>
       <li>
-        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2" routerLink="skills">Skills</a>
+        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2"
+          routerLink="skills">Skills</a>
       </li>
       <li>
-        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2" routerLink="contacts">Contacts</a>
+        <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2"
+          routerLink="contacts">Contacts</a>
       </li>
       <li class="h-8">
         <a></a>
@@ -55,5 +61,6 @@
         </ul>
       </li>
     </ul>
+    }
   </div>
 </nav>
