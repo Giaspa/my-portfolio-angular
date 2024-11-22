@@ -1,0 +1,96 @@
+@if(isDropdownOpen){
+<div class="absolute top-0 left-0 bg-transparent h-screen w-screen" (click)="closeDropdown()"></div>
+}
+
+<div #dropdownDetails class="dropdown lg:hidden absolute top-4 left-4 z-50">
+  <button (click)="toggleDropdown()" class="btn btn-circle text-stone-300">
+    @if(isDropdownOpen){
+    <!-- close icon -->
+    <i class="fa-solid fa-xmark  fa-xl"></i>
+    } @else {
+    <!-- hamburger icon -->
+    <i class="fa-solid fa-bars fa-xl"></i>
+    }
+  </button>
+
+  <ul class="z-20 mt-3 w-52 p-2 shadow rounded-sm glass" [ngClass]="isDropdownOpen ? 'flex flex-col gap-4' : 'hidden'">
+    <li>
+      <button (click)="navigate('about')" class="text-lg font-semibold" routerLink="about"
+        routerLinkActive="underline underline-offset-2">About</button>
+    </li>
+    <li>
+      <button (click)="navigate('projects')" class="text-lg font-semibold" routerLink="projects"
+        routerLinkActive="underline underline-offset-2">Projects</button>
+    </li>
+    <li>
+      <button (click)="navigate('skills')" class="text-lg font-semibold" routerLink="skills"
+        routerLinkActive="underline underline-offset-2">Skills</button>
+    </li>
+    <li>
+      <button (click)="navigate('contacts')" class="text-lg font-semibold" routerLink="contacts"
+        routerLinkActive="underline underline-offset-2">Contacts</button>
+    </li>
+    <!-- <li class="h-8">
+        <a></a>
+      </li>
+      <li>
+        <a>Show in:</a>
+        <ul class="p-2 flex flex-col gap-4">
+          <app-framework-icon [disabled]="true" title="Angular">
+            <img src="assets/svg/angular.svg" alt="Angular">
+          </app-framework-icon>
+
+          <app-framework-icon title="React">
+            <img src="assets/svg/react.svg" alt="React" class="h-5">
+          </app-framework-icon>
+
+          <app-framework-icon title="Vue.js">
+            <img src="assets/svg/vue.svg" alt="Vue.js" class="h-5">
+          </app-framework-icon>
+        </ul>
+      </li> -->
+  </ul>
+  <!-- <button class="btn lg:hidden glass text-stone-300 rounded-sm pointer-events-auto" (click)="toggleDropdown()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  @if(isDropdownOpen){
+  <ul class="menu dropdown-content z-20 mt-3 w-52 p-2 shadow rounded-sm glass">
+    <li>
+      <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2"
+        routerLink="about">About</a>
+    </li>
+    <li>
+      <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2"
+        routerLink="projects">Projects</a>
+    </li>
+    <li>
+      <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2"
+        routerLink="skills">Skills</a>
+    </li>
+    <li>
+      <a (click)="closeDropdown()" class="text-lg font-semibold" routerLinkActive="underline underline-offset-2"
+        routerLink="contacts">Contacts</a>
+    </li>
+    <li class="h-8">
+      <a></a>
+    </li>
+    <li>
+      <a>Show in:</a>
+      <ul class="p-2 flex flex-col gap-4">
+        <app-framework-icon [disabled]="true" title="Angular">
+          <img src="assets/svg/angular.svg" alt="Angular">
+        </app-framework-icon>
+
+        <app-framework-icon title="React">
+          <img src="assets/svg/react.svg" alt="React" class="h-5">
+        </app-framework-icon>
+
+        <app-framework-icon title="Vue.js">
+          <img src="assets/svg/vue.svg" alt="Vue.js" class="h-5">
+        </app-framework-icon>
+      </ul>
+    </li>
+  </ul>
+  } -->
+</div>
