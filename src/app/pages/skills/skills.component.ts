@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeroComponent } from "../../components/hero/hero.component";
-import { SkillAndPath, SkillByGroup, SKILLS_N_PATH, SKILLS_N_PATH_BY_GROUP } from '../../../types/skill.model';
+import { SkillByGroup, SKILLS_N_PATH_BY_GROUP } from '../../../types/skill.model';
 
 @Component({
   selector: 'app-skills',

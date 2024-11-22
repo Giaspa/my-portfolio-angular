@@ -15,18 +15,4 @@ import { AssertItemComponent } from "./assert-item/assert-item.component";
 export class AboutComponent {
   experiences: Experience[] = MOCK_EXPERIENCES;
   about: About = MOCK_ABOUT;
-
-  showTabs: { [k: string]: boolean } = {
-    a_who: true,
-    b_when: false,
-    c_so: false,
-    d_learn: false,
-    e_and: false,
-  }
-
-  showNext(key: string){
-    const currIndex = Object.keys(this.showTabs).findIndex(item => item === key);
-
-
-  }
 }

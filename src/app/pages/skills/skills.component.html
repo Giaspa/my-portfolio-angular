@@ -7,7 +7,7 @@
   <section class="flex flex-col lg:flex-row flex-wrap gap-4 flex-1 lg:max-h-[calc(100vh-16rem-3rem)] lg:overflow-y-auto">
     @for (group of skillGroup; track $index) {
     <article class="glass p-4 flex-1">
-      <label class="font-mono font-semibold border-b w-full block mb-2">{{group.group || "Others..."}}</label>
+      <p class="font-mono font-semibold border-b w-full block mb-2">{{group.group || "Others..."}}</p>
 
       <ul class="flex flex-col flex-wrap gap-y-1 gap-x-4 text-lg">
         @for(item of group.skills; track item.skill){
