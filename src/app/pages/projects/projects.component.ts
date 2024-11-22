@@ -5,10 +5,11 @@ import { Project, MOCK_PROJECTS } from '../../../types/project.model';
 import { ProjectsCarouselComponent } from "./projects-carousel/projects-carousel.component";
 import { SVG_MAP } from '../../../types/svg.model';
 import { ProjectService } from './project.service';
+import { HeaderComponent } from "../../components/header/header.component";
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [HeroComponent, ProjectButtonComponent, ProjectsCarouselComponent],
+  imports: [HeroComponent, ProjectButtonComponent, ProjectsCarouselComponent, HeaderComponent],
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent {

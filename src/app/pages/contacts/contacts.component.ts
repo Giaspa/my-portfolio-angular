@@ -4,10 +4,11 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { environment } from '../../../environment';
+import { HeaderComponent } from "../../components/header/header.component";
 @Component({
   selector: 'app-contacts',
   standalone: true,
-  imports: [HeroComponent, FormsModule, CommonModule],
+  imports: [HeroComponent, FormsModule, CommonModule, HeaderComponent],
   templateUrl: './contacts.component.html',
 })
 export class ContactsComponent {

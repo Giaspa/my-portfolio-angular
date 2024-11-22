@@ -17,4 +17,9 @@
     font-style: normal;
   }
 
+  .text-gradient {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
 }
