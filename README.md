@@ -25,7 +25,7 @@ The goal is to write code that feels consistent across all versions of my portfo
         <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/sonarcloud-icon.svg" width="40" title="SonarCloud"/>        
       </td>
 <td align='center' width="160">
-        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/github-icon.svg" width="40" title="GitHub"/>        
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/github-icon.svg" width="40" title="GitHub" style="filter: invert(1);"/>        
       </td>
 <td align='center' width="160">
         <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/browserstack.svg" width="40" title="BrowserStack"/>        
