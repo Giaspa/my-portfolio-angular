@@ -1,27 +1,49 @@
-# MyPortfolioAngular
+# My Portfolio - Angular Version
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
+Hello there! 👋 Welcome to the Angular version of my portfolio!  
+This project is part of my personal initiative to create multiple versions of my portfolio using different frontend frameworks. Here’s why:
 
-## Development server
+- 🥇**First**, to showcase my ability to work with various tools and technologies.
+- 🥈**Second**, to explore and learn different approaches across frameworks.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The goal is to write code that feels consistent across all versions of my portfolio, regardless of the underlying framework.
 
-## Code scaffolding
+## 💻 Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<table width="100" align='center' >
+  <tr>
+      <td align='center' width="40">
+        <img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" width="32" title="Angular"/>        
+      </td>
+<td align='center' width="40">
+        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" width="32" title="Tailwind CSS"/>        
+      </td>
+<td align='center' width="40">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/daisyUI-icon.svg" width="32" title="DaisyUI"/>        
+      </td>
+<td align='center' width="40">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/sonarcloud-icon.svg" width="32" title="SonarCloud"/>        
+      </td>
+<td align='center' width="40">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/github-icon.svg" width="32" title="GitHub"/>        
+      </td>
+<td align='center' width="40">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/browserstack.svg" width="32" title="BrowserStack"/>        
+      </td>
+  </tr>
+</table>
 
-## Build
+- **Angular** 17
+- **Tailwind CSS** 3
+- **DaisyUI** 4
+- **EmailJS** 3
+- **SonarCloud**
+- **GitHub**
+- **GitHub Pages**
+- **BrowserStack**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚀 Deployment
 
-## Running unit tests
+This portfolio is deployed on **GitHub Pages**, one of the easiest ways to launch an application hosted on GitHub.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Feel free to explore the [live version](https://giaspa.github.io/my-portfolio-angular/) and the [codebase](https://github.com/Giaspa/my-portfolio-angular). Feedback is always welcome!
