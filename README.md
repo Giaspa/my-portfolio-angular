@@ -12,23 +12,23 @@ The goal is to write code that feels consistent across all versions of my portfo
 
 <table width="100" align='center' >
   <tr>
-      <td align='center' width="40">
-        <img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" width="32" title="Angular"/>        
+      <td align='center' width="80">
+        <img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" width="80" title="Angular"/>        
       </td>
-<td align='center' width="40">
-        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" width="32" title="Tailwind CSS"/>        
+<td align='center' width="80">
+        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" width="80" title="Tailwind CSS"/>        
       </td>
-<td align='center' width="40">
-        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/daisyUI-icon.svg" width="32" title="DaisyUI"/>        
+<td align='center' width="80">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/daisyUI-icon.svg" width="80" title="DaisyUI"/>        
       </td>
-<td align='center' width="40">
-        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/sonarcloud-icon.svg" width="32" title="SonarCloud"/>        
+<td align='center' width="80">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/sonarcloud-icon.svg" width="80" title="SonarCloud"/>        
       </td>
-<td align='center' width="40">
-        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/github-icon.svg" width="32" title="GitHub"/>        
+<td align='center' width="80">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/github-icon.svg" width="80" title="GitHub"/>        
       </td>
-<td align='center' width="40">
-        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/browserstack.svg" width="32" title="BrowserStack"/>        
+<td align='center' width="80">
+        <img src="https://raw.githubusercontent.com/gilbarbara/logos/92bb74e98bca1ea1ad794442676ebc4e75038adc/logos/browserstack.svg" width="80" title="BrowserStack"/>        
       </td>
   </tr>
 </table>
