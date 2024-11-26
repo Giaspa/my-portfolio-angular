@@ -9,6 +9,4 @@ import { Experience } from '../../../../types/experience.model';
 })
 export class ExperienceComponent {
   @Input() experience?: Experience
-  @Input() checked?: boolean
-
 }
