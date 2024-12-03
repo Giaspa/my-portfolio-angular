@@ -20,11 +20,11 @@ export class ProjectButtonComponent {
 
     setTimeout(() => {
       this.router.navigateByUrl('projects').then(() => {
-        const element = document.getElementById(this.project.id);
+        const element = document.getElementById(`${this.project.id}`);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        this.router.navigate([`projects`], { fragment: this.project.id })
+        this.router.navigate([`projects`], { fragment: `${this.project.id}` })
       });
     }, 200);
   }

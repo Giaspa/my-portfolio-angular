@@ -23,10 +23,10 @@ export class ProjectsCarouselComponent {
 
   getBackId($index: number): string {
     if ($index === 0) {
-      return this.projects[this.lastProjectsIndex].id;
+      return `${this.projects[this.lastProjectsIndex].id}`;
     }
 
-    return this.projects[$index - 1].id;
+    return `${this.projects[$index - 1].id}`;
   }
 
   getAheadId($index: number) {
