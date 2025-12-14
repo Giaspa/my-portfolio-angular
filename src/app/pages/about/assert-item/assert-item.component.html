@@ -6,7 +6,7 @@
     }
   </p>
 
-  <app-assert-item [key]="nextkey"></app-assert-item>
+  <app-assert-item [key]="nextkey" [about]="about"></app-assert-item>
   } @else {
     <button #focusbutton (click)="showNext()" class="btn glass text-stone-300">{{message}}</button>
   }

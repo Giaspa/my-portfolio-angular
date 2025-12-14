@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AssertItemComponent {
   @Input() key?: keyof About;
+  @Input() about?: About;
   @ViewChild('focusbutton') focusbutton!: ElementRef<HTMLButtonElement>
   nextkey?: keyof About;
   message: string = "More...";
@@ -36,7 +37,8 @@ export class AssertItemComponent {
   }
 
   findList(): string[] {
-    return this.key ? MOCK_ABOUT[this.key] : [];
+    const aboutData = this.about ?? MOCK_ABOUT;
+    return this.key ? aboutData[this.key] : [];
   }
 
   findNextKey(): keyof About | undefined {

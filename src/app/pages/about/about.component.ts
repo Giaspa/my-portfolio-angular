@@ -19,6 +19,20 @@ export class AboutComponent {
   about: About = MOCK_ABOUT;
 
   constructor(private route: ActivatedRoute) {
-    this.experiences = this.route.snapshot.data['experiences']
+    const resolverData = this.route.snapshot.data['experiences'] as { experiences?: Experience[]; about?: About } | null;
+    
+    if (resolverData) {
+      this.experiences = resolverData.experiences ?? undefined;
+      this.about = resolverData.about ?? MOCK_ABOUT;
+      
+      // Debug: verifica che i dati siano stati caricati
+      if (resolverData.about) {
+        console.log('✅ About data loaded from DB:', resolverData.about);
+      } else {
+        console.warn('⚠️ About data not available, using MOCK_ABOUT');
+      }
+    } else {
+      console.warn('⚠️ Resolver data not available');
+    }
   }
 }

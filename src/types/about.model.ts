@@ -6,6 +6,13 @@ export type About = {
   e_and: string[],
 }
 
+export type AboutSection = {
+  id: number,
+  sectionKey: string,
+  text: string,
+  order: number
+}
+
 export const MOCK_ABOUT: About = {
   a_who: [
     "Hello there! I'm Gianluca, nice to meet you!",
@@ -26,4 +33,37 @@ export const MOCK_ABOUT: About = {
     "When I'm not writing code for work, you're likely to find me reading up on the latest IT trends, prototyping new ideas or finding creative solutions to complex challenges.",
     "I am a firm believer in the power of collaboration and am always looking for ways to share knowledge and grow with my colleagues."
   ],
+}
+
+export function transformAboutSectionsToAbout(sections: AboutSection[]): About {
+  const about: About = {
+    a_who: [],
+    b_when: [],
+    c_so: [],
+    d_learn: [],
+    e_and: [],
+  };
+
+  // Raggruppa per sectionKey e ordina per order all'interno di ogni gruppo
+  const grouped = sections.reduce((acc, section) => {
+    if (!acc[section.sectionKey]) {
+      acc[section.sectionKey] = [];
+    }
+    acc[section.sectionKey].push(section);
+    return acc;
+  }, {} as Record<string, AboutSection[]>);
+
+  // Ordina ogni gruppo per order e popola l'oggetto About
+  Object.keys(grouped).forEach(sectionKey => {
+    const key = sectionKey as keyof About;
+    if (about[key]) {
+      grouped[sectionKey]
+        .sort((a, b) => a.order - b.order)
+        .forEach(section => {
+          about[key].push(section.text);
+        });
+    }
+  });
+
+  return about;
 }
